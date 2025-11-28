@@ -35,7 +35,6 @@ int main(){
     
     printf("🔧 Génération des benchmarks...\n\n");
     
-    // ========== GRANDES VALEURS (0 à 1,000,000) ==========
     printf(" Génération des tableaux avec GRANDES valeurs (0-1000000)...\n");
     for(taille = 1000; taille<=25000; taille += 1000){
         sprintf(nom,"benchmark_grande_%d.txt",taille);
@@ -43,7 +42,7 @@ int main(){
         printf("    %s\n", nom);
     }
     
-    // ========== PETITES VALEURS (0 à 100) ==========
+
     printf("\n Génération des tableaux avec PETITES valeurs (0-100)...\n");
     for(taille = 1000; taille<=25000; taille += 1000){
         sprintf(nom,"benchmark_petite_%d.txt",taille);
