@@ -7,7 +7,7 @@ int main() {
     
     printf("Generation des graphiques separes...\n\n");
     
-    // ========== 1. ALEATOIRE - PETITES valeurs ==========
+
     printf("1. Aleatoire - Petites valeurs\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tableaux ALEATOIRES - Petites valeurs (0-100)'; ");
@@ -16,7 +16,7 @@ int main() {
     strcat(cmd, "plot for [i=2:10] 'resultats_aleatoire_petite.csv' using 1:i title columnheader lw 2.5 ps 1.5\" > graph_aleatoire_petite.png");
     system(cmd);
     
-    // ========== 2. ALEATOIRE - GRANDES valeurs ==========
+
     printf("2. Aleatoire - Grandes valeurs\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tableaux ALEATOIRES - Grandes valeurs (0-1000000)'; ");
@@ -24,8 +24,7 @@ int main() {
     strcat(cmd, "set datafile separator comma; set style data linespoints; set grid; ");
     strcat(cmd, "plot for [i=2:10] 'resultats_aleatoire_grande.csv' using 1:i title columnheader lw 2.5 ps 1.5\" > graph_aleatoire_grande.png");
     system(cmd);
-    
-    // ========== 3. CROISSANT - PETITES valeurs ==========
+
     printf("3. Croissant - Petites valeurs\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tableau CROISSANT - Petites valeurs (0-100)'; ");
@@ -34,7 +33,7 @@ int main() {
     strcat(cmd, "plot for [i=2:10] 'resultats_croissant_petite.csv' using 1:i title columnheader lw 2.5 ps 1.5\" > graph_croissant_petite.png");
     system(cmd);
     
-    // ========== 4. CROISSANT - GRANDES valeurs ==========
+
     printf("4. Croissant - Grandes valeurs\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tableau CROISSANT - Grandes valeurs (0-1000000)'; ");
@@ -43,7 +42,7 @@ int main() {
     strcat(cmd, "plot for [i=2:10] 'resultats_croissant_grande.csv' using 1:i title columnheader lw 2.5 ps 1.5\" > graph_croissant_grande.png");
     system(cmd);
     
-    // ========== 5. DECROISSANT - PETITES valeurs ==========
+
     printf("5. Decroissant - Petites valeurs\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tableau DECROISSANT - Petites valeurs (0-100)'; ");
@@ -51,8 +50,7 @@ int main() {
     strcat(cmd, "set datafile separator comma; set style data linespoints; set grid; ");
     strcat(cmd, "plot for [i=2:10] 'resultats_decroissant_petite.csv' using 1:i title columnheader lw 2.5 ps 1.5\" > graph_decroissant_petite.png");
     system(cmd);
-    
-    // ========== 6. DECROISSANT - GRANDES valeurs ==========
+
     printf("6. Decroissant - Grandes valeurs\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tableau DECROISSANT - Grandes valeurs (0-1000000)'; ");
@@ -70,7 +68,7 @@ int main() {
     strcat(cmd, "plot for [i=2:10] 'resultats_constant_petite.csv' using 1:i title columnheader lw 2.5 ps 1.5\" > graph_constant_petite.png");
     system(cmd);
     
-    // ========== 8. CONSTANT - GRANDES valeurs ==========
+
     printf("8. Constant - Grandes valeurs\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tableau CONSTANT - Grandes valeurs (0-1000000)'; ");
@@ -79,7 +77,7 @@ int main() {
     strcat(cmd, "plot for [i=2:10] 'resultats_constant_grande.csv' using 1:i title columnheader lw 2.5 ps 1.5\" > graph_constant_grande.png");
     system(cmd);
     
-    // ========== 9. COMPARAISON 3 VERSIONS BULLE - Aleatoire Petites ==========
+
     printf("9. Comparaison 3 versions Bulle - Petites\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Comparaison 3 versions BULLE - Petites valeurs'; ");
@@ -90,7 +88,7 @@ int main() {
     strcat(cmd, "'resultats_aleatoire_petite.csv' using 1:4 title 'Bulle v3' lw 2.5 ps 2\" > graph_comparaison_bulles_petite.png");
     system(cmd);
     
-    // ========== 10. COMPARAISON 3 VERSIONS BULLE - Aleatoire Grandes ==========
+
     printf("10. Comparaison 3 versions Bulle - Grandes\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Comparaison 3 versions BULLE - Grandes valeurs'; ");
@@ -100,8 +98,7 @@ int main() {
     strcat(cmd, "'resultats_aleatoire_grande.csv' using 1:3 title 'Bulle v2' lw 2.5 ps 2, ");
     strcat(cmd, "'resultats_aleatoire_grande.csv' using 1:4 title 'Bulle v3' lw 2.5 ps 2\" > graph_comparaison_bulles_grande.png");
     system(cmd);
-    
-    // ========== 11. MEILLEURS ALGOS - Petites valeurs ==========
+
     printf("11. Meilleurs algorithmes - Petites valeurs\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Algorithmes performants - PETITES valeurs'; ");
@@ -113,7 +110,7 @@ int main() {
     strcat(cmd, "'resultats_aleatoire_petite.csv' using 1:10 title 'Rapide' lw 2.5 ps 2\" > graph_meilleurs_petite.png");
     system(cmd);
     
-    // ========== 12. MEILLEURS ALGOS - Grandes valeurs ==========
+ 
     printf("12. Meilleurs algorithmes - Grandes valeurs\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Algorithmes performants - GRANDES valeurs'; ");
@@ -125,7 +122,7 @@ int main() {
     strcat(cmd, "'resultats_aleatoire_grande.csv' using 1:10 title 'Rapide' lw 2.5 ps 2\" > graph_meilleurs_grande.png");
     system(cmd);
     
-    // ========== 13. TRI COMPTAGE - Comparaison Petites vs Grandes ==========
+
     printf("13. Tri COMPTAGE - Impact des valeurs (COMPARAISON DIRECTE)\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tri COMPTAGE - Impact MAJEUR des valeurs'; ");
@@ -135,10 +132,10 @@ int main() {
     strcat(cmd, "'resultats_aleatoire_grande.csv' using 1:8 title 'Comptage GRANDES (0-1M)' lw 3 ps 2\" > graph_comptage_comparaison.png");
     system(cmd);
     
-    // ========== ANALYSES SPECIFIQUES PAR ALGORITHME (tous scenarios) ==========
+
     printf("\n=== Generation des analyses specifiques par algorithme ===\n");
     
-    // 14. TRI BULLE V1 - Tous scenarios
+
     printf("14. Tri Bulle v1 - Tous scenarios\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tri BULLE v1 - Tous scenarios (Petites vs Grandes)'; ");
@@ -153,8 +150,7 @@ int main() {
     strcat(cmd, "'resultats_aleatoire_petite.csv' using 1:2 title 'Alea petite' lw 2.5 ps 2, ");
     strcat(cmd, "'resultats_aleatoire_grande.csv' using 1:2 title 'Alea GRANDE' lw 2.5 ps 2 dt 2\" > graph_bulle1_scenarios.png");
     system(cmd);
-    
-    // 15. TRI BULLE V2 - Tous scenarios
+
     printf("15. Tri Bulle v2 - Tous scenarios\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tri BULLE v2 - Tous scenarios (Petites vs Grandes)'; ");
@@ -170,7 +166,6 @@ int main() {
     strcat(cmd, "'resultats_aleatoire_grande.csv' using 1:3 title 'Alea GRANDE' lw 2.5 ps 2 dt 2\" > graph_bulle2_scenarios.png");
     system(cmd);
     
-    // 16. TRI BULLE V3 - Tous scenarios
     printf("16. Tri Bulle v3 - Tous scenarios\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tri BULLE v3 - Tous scenarios (Petites vs Grandes)'; ");
@@ -186,7 +181,7 @@ int main() {
     strcat(cmd, "'resultats_aleatoire_grande.csv' using 1:4 title 'Alea GRANDE' lw 2.5 ps 2 dt 2\" > graph_bulle3_scenarios.png");
     system(cmd);
     
-    // 17. TRI COCKTAIL - Tous scenarios
+
     printf("17. Tri Cocktail - Tous scenarios\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tri COCKTAIL - Tous scenarios (Petites vs Grandes)'; ");
@@ -202,7 +197,7 @@ int main() {
     strcat(cmd, "'resultats_aleatoire_grande.csv' using 1:5 title 'Alea GRANDE' lw 2.5 ps 2 dt 2\" > graph_cocktail_scenarios.png");
     system(cmd);
     
-    // 18. TRI SELECTION - Tous scenarios
+
     printf("18. Tri Selection - Tous scenarios\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tri SELECTION - Tous scenarios (Petites vs Grandes)'; ");
@@ -218,7 +213,7 @@ int main() {
     strcat(cmd, "'resultats_aleatoire_grande.csv' using 1:6 title 'Alea GRANDE' lw 2.5 ps 2 dt 2\" > graph_selection_scenarios.png");
     system(cmd);
     
-    // 19. TRI INSERTION - Tous scenarios
+
     printf("19. Tri Insertion - Tous scenarios\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tri INSERTION - Tous scenarios (Petites vs Grandes)'; ");
@@ -234,7 +229,7 @@ int main() {
     strcat(cmd, "'resultats_aleatoire_grande.csv' using 1:7 title 'Alea GRANDE' lw 2.5 ps 2 dt 2\" > graph_insertion_scenarios.png");
     system(cmd);
     
-    // 20. TRI COMPTAGE - Tous scenarios
+
     printf("20. Tri Comptage - Tous scenarios\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tri COMPTAGE - Tous scenarios (Petites vs Grandes)'; ");
@@ -250,7 +245,7 @@ int main() {
     strcat(cmd, "'resultats_aleatoire_grande.csv' using 1:8 title 'Alea GRANDE' lw 2.5 ps 2 dt 2\" > graph_comptage_scenarios.png");
     system(cmd);
     
-    // 21. TRI FUSION - Tous scenarios
+
     printf("21. Tri Fusion - Tous scenarios\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tri FUSION - Tous scenarios (Petites vs Grandes)'; ");
@@ -266,7 +261,7 @@ int main() {
     strcat(cmd, "'resultats_aleatoire_grande.csv' using 1:9 title 'Alea GRANDE' lw 2.5 ps 2 dt 2\" > graph_fusion_scenarios.png");
     system(cmd);
     
-    // 22. TRI RAPIDE - Tous scenarios
+
     printf("22. Tri Rapide - Tous scenarios\n");
     strcpy(cmd, "gnuplot -e \"set terminal png size 1400,900; ");
     strcat(cmd, "set title 'Tri RAPIDE - Tous scenarios (Petites vs Grandes)'; ");
